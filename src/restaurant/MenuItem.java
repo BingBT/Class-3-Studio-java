@@ -1,3 +1,5 @@
+package restaurant;
+
 public class MenuItem {
 
     private String name;
@@ -53,5 +55,13 @@ public class MenuItem {
 
     public void setNewItemStatus(boolean newItemStatus) {
         this.newItemStatus = newItemStatus;
+    }
+
+    public String toString(){
+        return String.format("%s: $%s", this.getName(), this.getPrice());
+    }
+
+    public boolean equals(MenuItem o) {
+        return this.name.equals(o.name) && o.category.equals(this.category);
     }
 }
